@@ -9,14 +9,13 @@
         <el-input v-model="form.password" placeholder="请输入密码"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button class="login-btn" type="primary">登 录</el-button>
+        <el-button class="login-btn" type="primary" @click.prevent="handleLogin">登 录</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
   data() {
     return {
@@ -25,11 +24,25 @@ export default {
         password: ''
       }
     };
+  },
+  methods: {
+    handleLogin() {
+      // 发送请求
+      this.$http.post('login', this.form)
+        .then((res) => {
+          if (res.data.meta.status === 200) {
+            this.$message.success('登录成功！');
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .login {
   background-color: #324152;
   height: 100%;
