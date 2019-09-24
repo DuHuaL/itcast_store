@@ -10,10 +10,16 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // 导入自定义样式
 import '@/assets/css/index.css';
+// 导入moment
+import moment from 'moment';
 Vue.use(MyAxios);
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
+// 格式化日期的过滤器
+Vue.filter('fomDate', (value, fomStr) => {
+  return moment(value).format(fomStr);
+});
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
