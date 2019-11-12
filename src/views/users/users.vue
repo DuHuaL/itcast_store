@@ -105,7 +105,7 @@
         label-position="right"
         label-width="100px"
         :model="userFormData">
-        <el-form-item label="活动名称" prop="username">
+        <el-form-item label="用户名" prop="username">
           <el-input v-model="userFormData.username" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
@@ -211,9 +211,9 @@ export default {
     // 获取列表信息的方法
     async init() {
       // 获取登陆的token
-      const token = sessionStorage.getItem('token');
+      // const token = sessionStorage.getItem('token');
       // 发送请求的时候带上token
-      this.$http.defaults.headers.common['Authorization'] = token;
+      // this.$http.defaults.headers.common['Authorization'] = token;
       const res = await this.$http.get(`users?pagenum=${this.pagenum}&pagesize=${this.pagesize}&query=${this.searchKey}`);
       this.loading = false;
       const data = res.data;
@@ -245,7 +245,7 @@ export default {
       if (data.meta.status === 200) {
         this.$message.success('用户状态修改成功');
       } else {
-        this.$message.error('用户状态修改失败');
+        this.$message.error(data.meta.msg);
       }
     },
     async handleAdd() {
@@ -285,7 +285,7 @@ export default {
           this.pagenum = 1;
           this.init();
         } else {
-          this.$message.error('用户删除失败');
+          this.$message.error(data.meta.msg);
         }
       }).catch(() => {
         this.$message({
