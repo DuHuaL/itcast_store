@@ -5,6 +5,9 @@ import Home from '@/views/home';
 import Users from '@/views/users/users';
 import Rights from '@/views/roles/rights';
 import Roles from '@/views/roles/roles';
+import ProCategory from '@/views/product/pro_category';
+import Goods from '@/views/product/goods';
+import Params from '@/views/product/params';
 import { Message } from 'element-ui';
 Vue.use(Router);
 
@@ -19,7 +22,10 @@ const router = new Router({
       children: [
         { name: 'users', path: 'users', component: Users },
         { name: 'rights', path: 'rights', component: Rights },
-        { name: 'roles', path: 'roles', component: Roles }
+        { name: 'roles', path: 'roles', component: Roles },
+        { name: 'procategory', path: 'categories', component: ProCategory },
+        { name: 'goods', path: 'goods', component: Goods },
+        { name: 'params', path: 'params', component: Params }
       ]
 
     }

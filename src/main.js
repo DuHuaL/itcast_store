@@ -12,9 +12,13 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/index.css';
 // 导入moment
 import moment from 'moment';
+// 导入封装的面包屑组件
+import MyBreadcrumb from '@/components/mybreadcrumb';
 Vue.use(MyAxios);
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
+// 全局注册
+Vue.component(MyBreadcrumb.name, MyBreadcrumb);
 
 // 格式化日期的过滤器
 Vue.filter('fomDate', (value, fomStr) => {

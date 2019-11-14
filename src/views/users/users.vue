@@ -1,10 +1,6 @@
 <template>
   <el-card class="box-card">
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-      <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-    </el-breadcrumb>
+     <my-breadcrumb level1="用户管理" level2="用户列表"></my-breadcrumb>
     <!-- 搜索 -->
     <el-row class="searchBox">
       <el-col :span="24"><div class="grid-content bg-purple-dark">
@@ -341,11 +337,6 @@ export default {
 </script>
 
 <style scoped>
-  .box-card {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-  }
   .searchBox {
     margin-top: 15px;
     margin-bottom: 15px;
