@@ -8,3 +8,9 @@ html,body{
   height: 100%;
   box-sizing: border-box;
 }
+.el-step__title {
+  font-size: 12px;
+}
+.ql-editor {
+  min-height: 300px;
+}

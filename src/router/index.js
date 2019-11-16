@@ -8,6 +8,8 @@ import Roles from '@/views/roles/roles';
 import ProCategory from '@/views/product/pro_category';
 import Goods from '@/views/product/goods';
 import Params from '@/views/product/params';
+// 商品管理里商品列表中的添加商品的组件
+import GoodsAdd from '@/views/product/goodsadd';
 import { Message } from 'element-ui';
 Vue.use(Router);
 
@@ -25,7 +27,8 @@ const router = new Router({
         { name: 'roles', path: 'roles', component: Roles },
         { name: 'procategory', path: 'categories', component: ProCategory },
         { name: 'goods', path: 'goods', component: Goods },
-        { name: 'params', path: 'params', component: Params }
+        { name: 'params', path: 'params', component: Params },
+        { name: 'goodsadd', path: 'goods/add', component: GoodsAdd }
       ]
 
     }
