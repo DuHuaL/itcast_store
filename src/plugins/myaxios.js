@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { Message } from 'element-ui';
 const MyAxios = {};
 MyAxios.install = function(Vue) {
   const instance = axios.create({
@@ -28,6 +28,10 @@ MyAxios.install = function(Vue) {
   instance.interceptors.response.use(function (response) {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
+    const {data: {meta: {status, msg}}} = response;
+    if (status !== 200 && status !== 201) {
+      Message.error(msg);
+    }
     return response;
   }, function (error) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger

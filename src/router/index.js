@@ -8,6 +8,8 @@ import Roles from '@/views/roles/roles';
 import ProCategory from '@/views/product/pro_category';
 import Goods from '@/views/product/goods';
 import Params from '@/views/product/params';
+import Orderlist from '@/views/orders/orderlist';
+import Reports from '@/views/dataReport/report';
 // 商品管理里商品列表中的添加商品的组件
 import GoodsAdd from '@/views/product/goodsadd';
 import { Message } from 'element-ui';
@@ -28,7 +30,9 @@ const router = new Router({
         { name: 'procategory', path: 'categories', component: ProCategory },
         { name: 'goods', path: 'goods', component: Goods },
         { name: 'params', path: 'params', component: Params },
-        { name: 'goodsadd', path: 'goods/add', component: GoodsAdd }
+        { name: 'goodsadd', path: 'goods/add', component: GoodsAdd },
+        { name: 'orderlist', path: 'orders', component: Orderlist },
+        { name: 'reports', path: 'reports', component: Reports }
       ]
 
     }
