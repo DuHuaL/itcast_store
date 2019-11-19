@@ -1,18 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '@/views/login';
-import Home from '@/views/home';
-import Users from '@/views/users/users';
-import Rights from '@/views/roles/rights';
-import Roles from '@/views/roles/roles';
-import ProCategory from '@/views/product/pro_category';
-import Goods from '@/views/product/goods';
-import Params from '@/views/product/params';
-import Orderlist from '@/views/orders/orderlist';
-import Reports from '@/views/dataReport/report';
-// 商品管理里商品列表中的添加商品的组件
-import GoodsAdd from '@/views/product/goodsadd';
 import { Message } from 'element-ui';
+const Login = () => import('@/views/login');
+const Home = () => import('@/views/home');
+const Users = () => import('@/views/users/users');
+const Rights = () => import('@/views/roles/rights');
+const Roles = () => import('@/views/roles/roles');
+const ProCategory = () => import('@/views/product/pro_category');
+const Goods = () => import('@/views/product/goods');
+const Params = () => import('@/views/product/params');
+const Orderlist = () => import('@/views/orders/orderlist');
+const Reports = () => import('@/views/dataReport/report');
+const GoodsAdd = () => import('@/views/product/goodsadd');// 商品管理里商品列表中的添加商品的组件
 Vue.use(Router);
 
 const router = new Router({
